@@ -3,12 +3,13 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show
-    @restaurant = Restaurant.find(restaurant_params)
-  end
-
   def new
     @restaurant = Restaurant.new
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:id])
+    @reviews = @restaurant.reviews
   end
 
   def create
