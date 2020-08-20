@@ -2,10 +2,12 @@
 <div><%= @restaurant.name %></div>
 
 <div><%= @restaurant.address %></div>
-<div><%= @restaurant.reviews.each do |review| %>
+<div><% @restaurant.reviews.each do |review| %>
   <%= review.content %>
+ 
   <% end %>
   </div>
 <h1>   </h1>
 <%= link_to 'Back', restaurants_path %> |
 <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant, @review) %>
+
